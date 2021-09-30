@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Css -->
+        <link rel="stylesheet" href="./css/aea1.css">
+
+        <title>AEA 1 || Guille Mendoza</title>
+    </head>
+    <body>
+        <div class="container-fluid h-100 justify-content-center align-items-center p-0">
+            <div class="container-fluid bg-dark p-3 text-white">
+                <h3 class="text-center">AEA 1. Repas basics Javascript.  <small>Guille Mendoza</small></h3>
+            </div>
+            <br>
+
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col col-lg-6">
+                        <form action="" name="contacto" class="row" id="contacto">
+                        
+                            <input class="col-3" id="nombre" type="text" name="nombre" placeholder="Nombre" value="">
+                            
+                            <input class="col-3" id="apellido" type="text" name="apellido" placeholder="Apellido" value=""/>
+                            <input class="col-7 mt-2" id="email" type="email" name="email" placeholder="Gmail" value=""/>
+                            <input  class="col-12 mt-2" id="asunto" type="text" name="asunto" placeholder="Asunto (No es obligatorio)" value=""/>
+                            <textarea class="col-12 mt-2" id="comentario" name="comentario" rows="10" cols="24" placeholder="Comentario"></textarea>
+                            <div class="row h-100 justify-content-center align-items-center mt-2">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" id="politica" name="politica" value="" >&nbsp; Accepto la política de privacidad<br>
+                            </div>
+
+                            <button class="col-12 mt-4 " type="button" class="btn" onclick="validarForm()">Enviar</button>
+                        
+                        </form> 
+                
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- JavaScript -->
+        <script src="./js/repas.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+
+    </body>
+</html>
