@@ -47,7 +47,7 @@
             <h2>4. Quina empresa hi ha actualment darrera de Javascript?</h2>
 
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, delectus! Delectus veniam sit at nihil inventore ipsum, corrupti, ullam consequuntur temporibus corporis rem? Ducimus voluptate delectus, sapiente pariatur eius reprehenderit!
+                    Oracle pero va ser desenvolupat a l'empresa Natscape.
                 </p>
 
             <h2>5. Què és una arrow function? A quin ES apareix (quin any).</h2>
@@ -59,13 +59,39 @@
             <h2>6. Què és un callback? Posa un exemple.</h2>
 
                 <p>
-                    Un callback son les funcions que son asignades a un parametre a una altre funcio
+                    Un callback son les funcions que son asignades a un parametre a una altre funcio.<br>
+                    Un exemple =><br><br>
+                    function saludar(nombre) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Hola ' + nombre);<br>
+                    }<br>
+                    <br>
+                    function procesarEntradaUsuario(callback) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var nombre = prompt('Por favor ingresa tu nombre.');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback(nombre);<br>
+                    }<br>
+                    <br>
+                    procesarEntradaUsuario(saludar);<br><br>
                 </p>
 
             <h2>7. Què és una promesa en Javascript (promise). Posa un exemple. Explica també la diferència entre la programació síncrona i la programació asíncrona, posa un exemple.</h2>
 
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas tempora cum, incidunt necessitatibus nulla sint! Pariatur, hic iure dolor quibusdam perspiciatis ex recusandae, mollitia soluta impedit facilis, sit doloribus officia.
+                    Una promesa en JavaScript es un objecte que representa la terminacio o el fracas d'una operacio asincrona, per exemple un metode de promese es el .then(funcio) -> aquest es la forma general d'utilitzar una promesa.<br>
+                    La programació síncrona es tot allo que te que esperar fins que el resultat d'un codi s'hagi fet mentres que la programació asíncrona es tot allo que dona una resposta que es donara en un futur sense que es tingui que esperar a la resposta.<br>
+                    Un exemple de síncrona => console.log("hola");<br>
+                    Un exemple de asíncrona =><br><br>  
+                    function dos{} {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Dos bro");<br>
+                    };<br>
+                    <br>
+                    functio uno() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Uno bro");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dos();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Tres bro");<br>
+                    };<br>
+                    <br>
+                    uno();<br>
+
                 </p>
     </div>
     <br>
