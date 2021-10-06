@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require("uuid");
 
-class Alumne {
+class Tarea {
   id = "";
   nom = "";
 
@@ -10,4 +10,4 @@ class Alumne {
   }
 }
 
-module.exports = Alumne;
+module.exports = Tarea;

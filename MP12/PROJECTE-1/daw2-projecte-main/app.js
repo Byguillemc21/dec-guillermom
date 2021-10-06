@@ -1,6 +1,6 @@
 require("colors");
 
-const { inquirerMenu, pausa, novaTarea, alumneSelect, introHores, confirmar} = require("./helpers/inquirer");
+const { inquirerMenu, pausa, novaTarea, tareaSelect, introHores, confirmar} = require("./helpers/inquirer");
 const { guardarDB , readDB} = require("./helpers/guardarFitxer");
 
 const AlumnesHores = require("./models/alumneshores");
@@ -20,7 +20,7 @@ const main = async () => {
 
     switch (opt) {
       case "1":
-        const nomTarea = await novaTarea("Nom de la tarea: ");
+        const nomTarea = await novaTarea("Nombre de la tarea: ");
         tareas.crearTarea(nomTarea);
         // const alumne = new Alumne("Ricard", 10);
         // console.log(alumne);
@@ -68,7 +68,18 @@ const main = async () => {
         };
         break;
       case "6":
-        
+        const idte = await tareaSelect(tareas.llistatArr);
+        if ( idte !== '0') {
+          const ok = await confirmar();
+            if (ok) {
+              const tareaEliminat = await tareas.eliminarTarea(idte);
+              console.log(`La tarea '${tareaEliminat}' a sido eliminada`);
+            }
+            else {
+              console.log(`La tarea no a sido eliminada`);
+            }
+        };
+        break;
       default:
         break;
     }

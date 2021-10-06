@@ -71,7 +71,7 @@ const novaTarea = async (message) => {
       message,
       validate(value) {
         if (value.length === 0) {
-          return "Si us plau, introdueix una tarea";
+          return "Porfavor, introduzca una tarea";
         }
         return true;
       },
@@ -82,12 +82,12 @@ const novaTarea = async (message) => {
   return nom;
 };
 
-const alumneSelect = async( alumnes = [] ) => {
-  const choices = alumnes.map( (alumne, i) => {
+const tareaSelect = async( tareas = [] ) => {
+  const choices = tareas.map( (tarea, i) => {
     const idx =`${ i +1}.`.green;
     return {
-      value: alumne.id,
-      name: `${idx} ${alumne.nom}`
+      value: tarea.id,
+      name: `${idx} ${tarea.nom}`
     };
   });
   choices.unshift({
@@ -98,7 +98,7 @@ const alumneSelect = async( alumnes = [] ) => {
     {
       type: 'list',
       name: 'id',
-      message:'Selecciona alumne',
+      message:'Selecciona tarea',
       choices,
 
     },
@@ -135,7 +135,7 @@ const confirmar = async() => {
     {
       type: "confirm",
       name: "ok",
-      message: "Vols eliminar aquest alumne? ",
+      message: "Quieres eliminar esta tarea? ",
     },
   ];
   const { ok } = await inquirer.prompt(question);
@@ -149,7 +149,7 @@ module.exports = {
   inquirerMenu,
   pausa,
   novaTarea,
-  alumneSelect,
+  tareaSelect,
   introHores,
   confirmar,
 };

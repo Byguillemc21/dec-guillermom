@@ -1,4 +1,4 @@
-const Alumne = require("./alumne");
+const Tarea = require("./tarea");
 
 /**
  * _llista :
@@ -26,7 +26,7 @@ class AlumnesHores {
   }
 
   crearTarea(nom = "") {
-    const tarea = new Alumne(nom);
+    const tarea = new Tarea(nom);
     this._llista[tarea.id] = tarea;
   }
 
@@ -64,10 +64,10 @@ class AlumnesHores {
     return alumne.nom;
   }
 
-  async eliminarAlumne(id) {
-    const alumne2 = this._llista[id]
+  async eliminarTarea(id) {
+    const tarea2 = this._llista[id]
     delete this._llista[id];
-    return alumne2.nom;
+    return tarea2.nom;
   }
 
 }
