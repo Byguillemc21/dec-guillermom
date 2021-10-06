@@ -56,7 +56,7 @@ const pausa = async () => {
     {
       type: "input",
       name: "enter",
-      message: `Presiona ${"enter".yellow} per a continuar`,
+      message: `Presiona ${"enter".yellow} para continuar`,
     },
   ];
   console.log("\n");
