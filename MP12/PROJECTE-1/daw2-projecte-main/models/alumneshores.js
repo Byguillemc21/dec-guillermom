@@ -25,9 +25,9 @@ class AlumnesHores {
     this._llista = {};
   }
 
-  crearAlumne(nom = "", hores) {
-    const alumne = new Alumne(nom, hores);
-    this._llista[alumne.id] = alumne;
+  crearTarea(nom = "") {
+    const tarea = new Alumne(nom);
+    this._llista[tarea.id] = tarea;
   }
 
   carregarAlumnesFromArray(alumnes = []){
@@ -36,7 +36,7 @@ class AlumnesHores {
     });
   }
 
-  llistarAlumnes(){
+  llistarTareas(){
     console.log();//soc un salt de linea
     let conta = 0;
     this.llistatArr.forEach( alumne =>{

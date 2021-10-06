@@ -1,18 +1,18 @@
 require("colors");
 
-const { inquirerMenu, pausa, nouAlumne, alumneSelect, introHores, confirmar} = require("./helpers/inquirer");
+const { inquirerMenu, pausa, novaTarea, alumneSelect, introHores, confirmar} = require("./helpers/inquirer");
 const { guardarDB , readDB} = require("./helpers/guardarFitxer");
 
 const AlumnesHores = require("./models/alumneshores");
 
 const main = async () => {
   let opt = "";
-  const alumnes = new AlumnesHores();
+  const tareas = new AlumnesHores();
 
-  const alumnesDB = readDB();
+  const tareasDB = readDB();
 
-  if(alumnesDB){// si hi ha dades, carregales
-      alumnes.carregarAlumnesFromArray(alumnesDB);
+  if(tareasDB){// si hi ha dades, carregales
+      tareas.carregarAlumnesFromArray(tareasDB);
   }
 
   do {
@@ -20,14 +20,14 @@ const main = async () => {
 
     switch (opt) {
       case "1":
-        const nomAlumne = await nouAlumne("Nom alumne:");
-        alumnes.crearAlumne(nomAlumne, 0);
+        const nomTarea = await novaTarea("Nom de la tarea: ");
+        tareas.crearTarea(nomTarea);
         // const alumne = new Alumne("Ricard", 10);
         // console.log(alumne);
         break;
 
       case "2":
-        alumnes.llistarAlumnes();
+        tareas.llistarTareas();
         break;
 
       case "3":
@@ -67,12 +67,13 @@ const main = async () => {
             }
         };
         break;
-
+      case "6":
+        
       default:
         break;
     }
 
-    guardarDB(alumnes.llistatArr);
+    guardarDB(tareas.llistatArr);
 
     await pausa();
   } while (opt !== "0");
