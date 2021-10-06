@@ -65,7 +65,9 @@ class AlumnesHores {
   }
 
   async eliminarAlumne(id) {
+    const alumne2 = this._llista[id]
     delete this._llista[id];
+    return alumne2.nom;
   }
 
 }

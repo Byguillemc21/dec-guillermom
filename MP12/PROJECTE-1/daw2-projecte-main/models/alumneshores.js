@@ -1,4 +1,3 @@
-const { nouAlumne } = require("../helpers/inquirer");
 const Alumne = require("./alumne");
 
 /**
@@ -65,10 +64,10 @@ class AlumnesHores {
     return alumne.nom;
   }
 
-  async eliminarAlumne(id, nom) {
-    const alumne = this._llista[nom];
+  async eliminarAlumne(id) {
+    const alumne2 = this._llista[id]
     delete this._llista[id];
-    
+    return alumne2.nom;
   }
 
 }

@@ -1,6 +1,6 @@
 require("colors");
 
-const { inquirerMenu, pausa, nouAlumne,alumneSelect,introHores } = require("./helpers/inquirer");
+const { inquirerMenu, pausa, nouAlumne, alumneSelect, introHores, confirmar} = require("./helpers/inquirer");
 const { guardarDB , readDB} = require("./helpers/guardarFitxer");
 
 const AlumnesHores = require("./models/alumneshores");
@@ -56,11 +56,16 @@ const main = async () => {
         //}
 
         const id2 = await alumneSelect(alumnes.llistatArr);
-        const nom2 = await alumneSelect(alumnes._llistaArr);
-        if ( id2 != '0') {
-           const alumneEliminat = await alumnes.eliminarAlumne(id2);
-           console.log(`Alumne : ${nom2} ha sigut eliminat`);
-        }
+        if ( id2 !== '0') {
+          const ok = await confirmar();
+            if (ok) {
+              const alumneEliminat = await alumnes.eliminarAlumne(id2);
+              console.log(`L'alumne ${alumneEliminat} ha sigut eliminat`);
+            }
+            else {
+              console.log(`L'alumne no s'ha eliminat`);
+            }
+        };
         break;
 
       default:

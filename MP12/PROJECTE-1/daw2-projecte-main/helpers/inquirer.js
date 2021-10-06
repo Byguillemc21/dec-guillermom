@@ -126,12 +126,12 @@ const introHores = async(message) => {
   return hores;
 }
 
-const confirmar = async(message) => {
+const confirmar = async() => {
   const question = [
     {
       type: "confirm",
-      nom: "ok",
-      message,
+      name: "ok",
+      message: "Vols eliminar aquest alumne? ",
     },
   ];
   const { ok } = await inquirer.prompt(question);
@@ -139,10 +139,13 @@ const confirmar = async(message) => {
 
 }
 
+
+
 module.exports = {
   inquirerMenu,
   pausa,
   nouAlumne,
   alumneSelect,
   introHores,
+  confirmar,
 };
