@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const AlumnesHores = require("../models/alumneshores");
+const ComPenTareas = require("../models/cptareas");
 require("colors");
 
 const preguntes = [
@@ -82,6 +82,32 @@ const novaTarea = async (message) => {
   return nom;
 };
 
+const tareaSelectCheck = async( tareas = [] ) => {
+  const choices = tareas.map( (tarea, i) => {
+    const idx =`${ i +1}.`.green;
+    return {
+      value: tarea.id,
+      name: `${idx} ${tarea.nom}`
+    };
+  });
+  choices.unshift({
+    value: '0',
+    name: '0. '.green + 'Cancel·lar'
+  });
+  const pregunta= [
+    {
+      type: 'checkbox',
+      name: 'id',
+      message:'Selecciona tarea',
+      choices,
+
+    },
+  ];
+
+  const {id} = await inquirer.prompt(pregunta);
+  return id;
+};
+
 const tareaSelect = async( tareas = [] ) => {
   const choices = tareas.map( (tarea, i) => {
     const idx =`${ i +1}.`.green;
@@ -92,7 +118,7 @@ const tareaSelect = async( tareas = [] ) => {
   });
   choices.unshift({
     value: '0',
-    name: '0.'.green + 'Cancel·lar'
+    name: '0. '.green + 'Cancel·lar'
   });
   const pregunta= [
     {
@@ -112,7 +138,9 @@ const eliminarAlumne = aync( alumnes = [] ) => {
 
 };
  */
-const introHores = async(message) => {
+
+
+/* const introHores = async(message) => {
   const question = [
     {
       type: "input",
@@ -128,7 +156,7 @@ const introHores = async(message) => {
   ];
   const { hores } = await inquirer.prompt(question);
   return hores;
-}
+} */
 
 const confirmar = async() => {
   const question = [
@@ -150,6 +178,6 @@ module.exports = {
   pausa,
   novaTarea,
   tareaSelect,
-  introHores,
+  tareaSelectCheck,
   confirmar,
 };

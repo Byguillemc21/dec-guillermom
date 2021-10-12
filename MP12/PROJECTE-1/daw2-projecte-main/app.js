@@ -1,18 +1,18 @@
 require("colors");
 
-const { inquirerMenu, pausa, novaTarea, tareaSelect, introHores, confirmar} = require("./helpers/inquirer");
+const { inquirerMenu, pausa, novaTarea, tareaSelect,tareaSelectCheck, confirmar} = require("./helpers/inquirer");
 const { guardarDB , readDB} = require("./helpers/guardarFitxer");
 
-const AlumnesHores = require("./models/alumneshores");
+const ComPenTareas = require("./models/cptareas");
 
 const main = async () => {
   let opt = "";
-  const tareas = new AlumnesHores();
+  const tareas = new ComPenTareas();
 
   const tareasDB = readDB();
 
   if(tareasDB){// si hi ha dades, carregales
-      tareas.carregarAlumnesFromArray(tareasDB);
+      tareas.carregarTareasFromArray(tareasDB);
   }
 
   do {
@@ -22,8 +22,7 @@ const main = async () => {
       case "1":
         const nomTarea = await novaTarea("Nombre de la tarea: ");
         tareas.crearTarea(nomTarea);
-        // const alumne = new Alumne("Ricard", 10);
-        // console.log(alumne);
+      
         break;
 
       case "2":
@@ -31,21 +30,29 @@ const main = async () => {
         break;
 
       case "3":
-        alumnes.llistarAlumnesHores();
+        tareas.tareasCom();
         break;
 
       case "4":
-        const id1 = await alumneSelect(alumnes.llistatArr);
-        /* const hores = await alumneHoresSelect(); */
+        /* const id1 = await alumneSelect(alumnes.llistatArr);
+          /*const hores = await alumneHoresSelect(); 
         if ( id1 !== '0'){
           const hores = await introHores("Hores fetes :");
           const nomAlumne = await alumnes.introNumHores( id1, hores);
           console.log(`Alumne : ${nomAlumne} ${'::'.yellow} ${hores} hores guardades!`);
-        }
-        
+        } */
+        tareas.tareasNocom();
         break;
 
       case "5":
+        const idtc = await tareaSelectCheck(tareas.llistatArr);
+        if ( idtc !== '0') {
+            idtc.forEach(i => {
+              if (i !== '0'){
+                console.log(i);
+              }
+            });
+        }; 
         //eliminar alumne de la bbdd
 
         //const id2 = ...
@@ -55,7 +62,7 @@ const main = async () => {
         //  
         //}
 
-        const id2 = await alumneSelect(alumnes.llistatArr);
+        /* const id2 = await alumneSelect(alumnes.llistatArr);
         if ( id2 !== '0') {
           const ok = await confirmar();
             if (ok) {
@@ -65,7 +72,7 @@ const main = async () => {
             else {
               console.log(`L'alumne no s'ha eliminat`);
             }
-        };
+        }; */
         break;
       case "6":
         const idte = await tareaSelect(tareas.llistatArr);

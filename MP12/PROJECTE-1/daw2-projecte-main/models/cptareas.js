@@ -5,7 +5,7 @@ const Tarea = require("./tarea");
  *  { uuid-234235324-234234523: {id: uuid-234235324-234234523, nom: 'pepito', hores: 10 }}
  */
 
-class AlumnesHores {
+class ComPenTareas {
   _llista = {
     abc: 123,
   };
@@ -13,8 +13,8 @@ class AlumnesHores {
   get llistatArr() {
     const llistat = [];
     Object.keys(this._llista).forEach((key) => {
-      const alumne = this._llista[key];
-      llistat.push(alumne);
+      const tasca = this._llista[key];
+      llistat.push(tasca);
     });
 
     return llistat;
@@ -30,9 +30,9 @@ class AlumnesHores {
     this._llista[tarea.id] = tarea;
   }
 
-  carregarAlumnesFromArray(alumnes = []){
-    alumnes.forEach( ( alumne ) => {
-      this._llista[alumne.id]= alumne;
+  carregarTareasFromArray(tareas = []){
+    tareas.forEach( ( tarea ) => {
+      this._llista[tarea.id]= tarea;
     });
   }
 
@@ -46,23 +46,23 @@ class AlumnesHores {
     });
   }
 
-  llistarAlumnesHores(){
+ /*  llistarAlumnesHores(){
     console.log();
     let conta = 0;
 
     this.llistatArr.forEach ( alumne =>{
       const {nom, horesFetes } = alumne;
-      /* const hores = horesFetes > 0 ? `${horesFetes}`.green:`${horesFetes}`.red */
+      /* const hores = horesFetes > 0 ? `${horesFetes}`.green:`${horesFetes}`.red 
       conta += 1;
       console.log(`${(conta + '.').green} ${'Nom:'.yellow} ${(nom + "").cyan} ${"::".green} ${'Hores:'.yellow} ${(horesFetes+"").cyan}`);
     }); 
  
-  }
-  async introNumHores ( id, hores ) {
+  } */
+  /* async introNumHores ( id, hores ) {
     const alumne = this._llista[id];
     alumne.horesFetes = hores;
     return alumne.nom;
-  }
+  } */
 
   async eliminarTarea(id) {
     const tarea2 = this._llista[id]
@@ -72,5 +72,5 @@ class AlumnesHores {
 
 }
 
-module.exports = AlumnesHores;
+module.exports = ComPenTareas;
 
