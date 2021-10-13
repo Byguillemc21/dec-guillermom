@@ -43,7 +43,7 @@ const preguntes = [
 const inquirerMenu = async () => {
   console.clear();
   console.log("========================".green);
-  console.log("   Seccione una opció".gray);
+  console.log("   Seccione una opción".gray);
   console.log("========================\n".green);
 
   const { opcio } = await inquirer.prompt(preguntes);
