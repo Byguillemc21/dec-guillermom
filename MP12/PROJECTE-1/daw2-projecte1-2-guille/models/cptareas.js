@@ -1,4 +1,4 @@
-const Tarea = require("./tarea");
+const Reserva = require("./reserva");
 
 /**
  * _llista :
@@ -13,8 +13,8 @@ class ComPenTareas {
   get llistatArr() {
     const llistat = [];
     Object.keys(this._llista).forEach((key) => {
-      const tasca = this._llista[key];
-      llistat.push(tasca);
+      const reserva = this._llista[key];
+      llistat.push(reserva);
     });
 
     return llistat;
@@ -25,9 +25,9 @@ class ComPenTareas {
     this._llista = {};
   }
 
-  crearTarea(nom = "", comp) {
-    const tarea = new Tarea(nom, comp);
-    this._llista[tarea.id] = tarea;
+  crearReserva(fila = "", columna = "") {
+    const reserva = new Reserva(fila, columna);
+    this._llista[reserva.id] = reserva;
   }
 
   carregarTareasFromArray(tareas = []){

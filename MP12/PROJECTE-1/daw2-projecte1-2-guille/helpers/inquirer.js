@@ -6,31 +6,23 @@ const preguntes = [
   {
     type: "list",
     name: "opcio",
-    message: "Qué desea hacer?",
+    message: "Què vols fer?",
     choices: [
       {
         value: "1",
-        name: `${"1. ".green} Crear tarea`,
+        name: `${"1. ".green} Nova reserva`,
       },
       {
         value: "2",
-        name: `${"2. ".green} Listar tareas`,
+        name: `${"2. ".green} Mostrar sala`,
       },
       {
         value: "3",
-        name: `${"3. ".green} Listar tareas completadas`,
+        name: `${"3. ".green} Mostrar recaudació`,
       },
       {
         value: "4",
-        name: `${"4. ".green} Listar tareas pendientes`,
-      },
-      {
-        value: "5",
-        name: `${"5. ".green} Completar tarea(s)`,
-      },
-      {
-        value: "6",
-        name: `${"6. ".green} Borrar tarea`,
+        name: `${"4. ".green} Eliminar reserva`,
       },
       {
         value: "0",
@@ -42,9 +34,9 @@ const preguntes = [
 
 const inquirerMenu = async () => {
   console.clear();
-  console.log("========================".green);
-  console.log("   Seccione una opción".gray);
-  console.log("========================\n".green);
+  console.log(`=========`.cyan ,`${'CINE MAX'.green}`, `=========`.cyan);
+  console.log("    Secciona una opció".gray);
+  console.log("============================\n".cyan);
 
   const { opcio } = await inquirer.prompt(preguntes);
 

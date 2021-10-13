@@ -53,7 +53,7 @@ const main = async () => {
                   const completado = true;
                   /* console.log(`Id tarea -> ${idtc2}`); */ 
                     tareas.completarTarea(idtc2,completado);
-                    console.log(`La/s tasca/s a sido completada `);   
+                    console.log(`La(s) tasca(s) a sido completada `);   
               }
               else {
                  console.log('Seleccione alguna tarea');
