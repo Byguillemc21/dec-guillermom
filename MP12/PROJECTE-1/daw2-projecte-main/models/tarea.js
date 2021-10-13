@@ -5,9 +5,10 @@ class Tarea {
   nom = "";
   completado = false;
 
-  constructor(nom) {
+  constructor(nom,comp) {
     this.id = uuidv4();
     this.nom = nom;
+    this.completado = comp;
   }
 }
 

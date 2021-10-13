@@ -25,8 +25,8 @@ class ComPenTareas {
     this._llista = {};
   }
 
-  crearTarea(nom = "") {
-    const tarea = new Tarea(nom);
+  crearTarea(nom = "", comp) {
+    const tarea = new Tarea(nom, comp);
     this._llista[tarea.id] = tarea;
   }
 
@@ -46,6 +46,32 @@ class ComPenTareas {
     });
   }
 
+  tareasCom(){
+    console.log();//soc un salt de linea
+    let conta = 0;
+    this.llistatArr.forEach( tasca =>{
+      if (tasca.completado==true){
+        const { nom } = tasca;
+        conta += 1;
+        console.log(`${(conta + '.').green} ${nom}`);
+      }
+    });
+    if (conta==0){console.log('No hay ninguna tarea completada');}
+  } 
+
+  tareasNocom(){
+    console.log();//soc un salt de linea
+    let conta = 0;
+    this.llistatArr.forEach( tasca =>{
+      if (tasca.completado==false){
+        const { nom } = tasca;
+        conta += 1;
+        console.log(`${(conta + '.').green} ${nom}`);
+      }
+    });
+    if (conta==0){console.log('Todas las tareas estan completadas');}
+  }
+
  /*  llistarAlumnesHores(){
     console.log();
     let conta = 0;
@@ -63,13 +89,20 @@ class ComPenTareas {
     alumne.horesFetes = hores;
     return alumne.nom;
   } */
-
+  async completarTarea(id,comp) {
+    const tarea3  = this._llista[id];
+    tarea3.completado = comp;
+    return tarea3.nom;
+    
+  }
   async eliminarTarea(id) {
-    const tarea2 = this._llista[id]
+    const tarea2 = this._llista[id];
     delete this._llista[id];
     return tarea2.nom;
   }
 
+  
+ 
 }
 
 module.exports = ComPenTareas;

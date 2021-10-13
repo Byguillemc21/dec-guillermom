@@ -1,6 +1,6 @@
 require("colors");
 
-const { inquirerMenu, pausa, novaTarea, tareaSelect,tareaSelectCheck, confirmar} = require("./helpers/inquirer");
+const { inquirerMenu, pausa, novaTarea, tareaSelect,tareaSelectCheck, confirmar,} = require("./helpers/inquirer");
 const { guardarDB , readDB} = require("./helpers/guardarFitxer");
 
 const ComPenTareas = require("./models/cptareas");
@@ -21,7 +21,7 @@ const main = async () => {
     switch (opt) {
       case "1":
         const nomTarea = await novaTarea("Nombre de la tarea: ");
-        tareas.crearTarea(nomTarea);
+        tareas.crearTarea(nomTarea, false);
       
         break;
 
@@ -48,20 +48,19 @@ const main = async () => {
         const idtc = await tareaSelectCheck(tareas.llistatArr);
         if ( idtc !== '0') {
             idtc.forEach(i => {
-              if (i !== '0'){
-                console.log(i);
+              if (i !== '0'){ 
+                  const idtc2 = i;
+                  const completado = true;
+                  /* console.log(`Id tarea -> ${idtc2}`); */ 
+                    tareas.completarTarea(idtc2,completado);
+                    console.log(`La/s tasca/s a sido completada `);   
+              }
+              else {
+                 console.log('Seleccione alguna tarea');
               }
             });
         }; 
-        //eliminar alumne de la bbdd
-
-        //const id2 = ...
-        //if ( id2 !== '0'){
-        //  
-        //
-        //  
-        //}
-
+        
         /* const id2 = await alumneSelect(alumnes.llistatArr);
         if ( id2 !== '0') {
           const ok = await confirmar();
@@ -77,6 +76,7 @@ const main = async () => {
       case "6":
         const idte = await tareaSelect(tareas.llistatArr);
         if ( idte !== '0') {
+    
           const ok = await confirmar();
             if (ok) {
               const tareaEliminat = await tareas.eliminarTarea(idte);
