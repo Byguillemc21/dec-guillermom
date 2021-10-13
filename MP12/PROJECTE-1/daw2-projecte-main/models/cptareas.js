@@ -39,8 +39,8 @@ class ComPenTareas {
   llistarTareas(){
     console.log();//soc un salt de linea
     let conta = 0;
-    this.llistatArr.forEach( alumne =>{
-      const { nom } = alumne;
+    this.llistatArr.forEach( tarea =>{
+      const { nom } = tarea;
       conta += 1;
       console.log(`${(conta + '.').green} ${nom}`);
     });
