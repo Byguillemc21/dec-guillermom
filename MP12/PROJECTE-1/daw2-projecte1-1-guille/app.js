@@ -34,13 +34,6 @@ const main = async () => {
         break;
 
       case "4":
-        /* const id1 = await alumneSelect(alumnes.llistatArr);
-          /*const hores = await alumneHoresSelect(); 
-        if ( id1 !== '0'){
-          const hores = await introHores("Hores fetes :");
-          const nomAlumne = await alumnes.introNumHores( id1, hores);
-          console.log(`Alumne : ${nomAlumne} ${'::'.yellow} ${hores} hores guardades!`);
-        } */
         tareas.tareasNocom();
         break;
 
@@ -60,18 +53,6 @@ const main = async () => {
               }
             });
         }; 
-        
-        /* const id2 = await alumneSelect(alumnes.llistatArr);
-        if ( id2 !== '0') {
-          const ok = await confirmar();
-            if (ok) {
-              const alumneEliminat = await alumnes.eliminarAlumne(id2);
-              console.log(`L'alumne ${alumneEliminat} ha sigut eliminat`);
-            }
-            else {
-              console.log(`L'alumne no s'ha eliminat`);
-            }
-        }; */
         break;
       case "6":
         const idte = await tareaSelect(tareas.llistatArr);

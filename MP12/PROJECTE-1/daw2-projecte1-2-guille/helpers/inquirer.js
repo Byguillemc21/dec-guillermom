@@ -40,7 +40,7 @@ const inquirerMenu = async () => {
 
   const { opcio } = await inquirer.prompt(preguntes);
 
-  return opcio; // retorno un valor entre 0 i 5
+  return opcio; // retorno un valor entre 0 i 4
 };
 
 const pausa = async () => {

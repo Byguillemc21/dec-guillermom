@@ -48,7 +48,7 @@ const inquirerMenu = async () => {
 
   const { opcio } = await inquirer.prompt(preguntes);
 
-  return opcio; // retorno un valor entre 0 i 5
+  return opcio; // retorno un valor entre 0 i 6
 };
 
 const pausa = async () => {
@@ -135,30 +135,6 @@ const tareaSelect = async( tareas = [] ) => {
   const {id} = await inquirer.prompt(pregunta);
   return id;
 };
-/* 
-const eliminarAlumne = aync( alumnes = [] ) => {
-
-};
- */
-
-
-/* const introHores = async(message) => {
-  const question = [
-    {
-      type: "input",
-      name: "hores",
-      message,
-      validate(value) {
-        if (value.length === 0) {
-          return "Si us plau, introdueix un numero";
-        }
-        return true;
-      },
-    },
-  ];
-  const { hores } = await inquirer.prompt(question);
-  return hores;
-} */
 
 const confirmar = async() => {
   const question = [
