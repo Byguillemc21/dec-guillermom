@@ -26,8 +26,8 @@ class Cineres {
     this._llista = {};
   }
 
-  crearReserva(fila = "", columna = "") {
-    const reserva = new Reserva(fila, columna);
+  crearReserva(nom = "", fila = "", columna = "") {
+    const reserva = new Reserva(nom, fila, columna);
     this._llista[reserva.id] = reserva;
   }
 
@@ -40,11 +40,11 @@ class Cineres {
   mostrarSala(sala){
     console.log(); //Soc un salt de linia
     /* console.log('              _'.cyan); */
-    console.log('|============================|'.blue);
-    console.log('|=========-SALA CINE-========|'.cyan);
-    console.log('|============================|'.blue);
-    console.log('|         '.cyan,'|||||||||'.bgBlue,'        |'.cyan);
-    console.log('|                            |'.cyan); //Soc una salt de linia
+    console.log('|=============================|'.blue);
+    console.log('|=========-SALA CINE-=========|'.cyan);
+    console.log('|=============================|___'.blue);
+    console.log('|        '.cyan,'||||||||||'.italic.red,'         __  |'.cyan);
+    console.log('|                            |  | |'.cyan); //Soc una salt de linia
       //  for (let fila = 0; fila < sala.length; fila++) {
       //    let columnas = sala[fila].join('|'.blue);
          
@@ -58,7 +58,7 @@ class Cineres {
         process.stdout.write(`|`.blue+`${columnas}`.green+`|`.blue);
         
       }
-      process.stdout.write(`  |`.cyan);
+      process.stdout.write(`  |  | |`.cyan);
       console.log();
     }
     /* const arrr = arr.join(' ')+'.'; */

@@ -1,6 +1,6 @@
 require("colors");
 
-const { inquirerMenu, pausa, nuevaFila, nuevaButaca, tareaSelect,tareaSelectCheck, confirmar,} = require("./helpers/inquirer");
+const { inquirerMenu, pausa, nuevoNombre, nuevaFila, nuevaButaca, tareaSelect,tareaSelectCheck, confirmar,} = require("./helpers/inquirer");
 const { guardarDB , readDB} = require("./helpers/guardarFitxer");
 
 const Cineres = require("./models/cinereservas");
@@ -20,6 +20,7 @@ const main = async () => {
 
     switch (opt) {
       case "1":
+        const nom = await nuevoNombre("A nombre de quien es la reserva: ")
         const fila = await nuevaFila("Indique la fila para la reserva: ");
         const butaca = await nuevaButaca("Indique la butaca: ");
         reservas.crearReserva(fila, butaca);

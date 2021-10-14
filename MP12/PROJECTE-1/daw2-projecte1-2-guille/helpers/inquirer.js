@@ -55,6 +55,24 @@ const pausa = async () => {
   await inquirer.prompt(question);
 };
 
+const nuevoNombre = async (message) => {
+  const question = [
+    {
+      type: "input",
+      name: "nom",
+      message,
+      validate(value) {
+        if (value.length === 0) {
+          return "Porfavor, introduzca un nombre";
+        }
+        return true;
+      },
+    },
+  ];
+  const { nom } = await inquirer.prompt(question);
+  return nom;
+}
+
 const nuevaFila = async (message) => {
   const question = [
     {
@@ -190,6 +208,7 @@ const confirmar = async() => {
 module.exports = {
   inquirerMenu,
   pausa,
+  nuevoNombre,
   nuevaFila,
   nuevaButaca,
   tareaSelect,
