@@ -40,10 +40,11 @@ class Cineres {
   mostrarSala(sala){
     console.log(); //Soc un salt de linia
     /* console.log('              _'.cyan); */
+   
     console.log('| |=============================|'.blue);
     console.log('| |=========-SALA CINE-=========|'.cyan);
     console.log('| |=============================|___'.blue);
-    console.log(`|____     `.cyan,' ||||||||||'.italic.red,'         __  |'.cyan);
+    console.log(`|___      `.cyan,' ||||||||||'.italic.red,'         __  |'.cyan);
     console.log('  |                            |  | |'.cyan); //Soc una salt de linia
       //  for (let fila = 0; fila < sala.length; fila++) {
       //    let columnas = sala[fila].join('|'.blue);

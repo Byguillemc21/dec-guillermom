@@ -117,7 +117,7 @@ const reservaSelect = async( reservas = [] ) => {
     const idx =`${ i +1}.`.green;
     return {
       value: reserva.id,
-      name: `${idx} ${reserva.nom}`
+      name: `${idx} ${('Nombre: ').gray}${reserva.nom}     |  ${(`Fila: `).gray}${reserva.fila} |  ${(`Butaca: `).gray}${reserva.columna}`
     };
   });
   choices.unshift({

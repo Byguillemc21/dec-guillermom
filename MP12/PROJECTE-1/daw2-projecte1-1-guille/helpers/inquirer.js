@@ -85,9 +85,10 @@ const novaTarea = async (message) => {
 const tareaSelectCheck = async( tareas = [] ) => {
   const choices = tareas.map( (tarea, i) => {
     const idx =`${ i +1}.`.green;
+    const compl = tarea.completado === true ? 'SI' : 'NO';
     return {
       value: tarea.id,
-      name: `${idx} ${tarea.nom}`
+      name: `${idx} ${(`Nombre: `).gray}${tarea.nom}   |  ${(`Completo: `).gray}${compl}`
     };
   });
   choices.unshift({
@@ -111,9 +112,10 @@ const tareaSelectCheck = async( tareas = [] ) => {
 const tareaSelect = async( tareas = [] ) => {
   const choices = tareas.map( (tarea, i) => {
     const idx =`${ i +1}.`.green;
+    const compl = tarea.completado === true ? 'SI' : 'NO'; 
     return {
       value: tarea.id,
-      name: `${idx} ${tarea.nom}`
+      name: `${idx} ${(`Nombre: `).gray}${tarea.nom}   |  ${(`Completo: `).gray}${compl}`
     };
   });
   choices.unshift({

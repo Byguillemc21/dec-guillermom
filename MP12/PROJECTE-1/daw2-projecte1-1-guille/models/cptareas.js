@@ -40,9 +40,10 @@ class ComPenTareas {
     console.log();//soc un salt de linea
     let conta = 0;
     this.llistatArr.forEach( tarea =>{
-      const { nom } = tarea;
+      const { nom, completado } = tarea;
+      const compl = completado === true ? 'SI' : 'NO';
       conta += 1;
-      console.log(`${(conta + '.').green} ${nom}`);
+      console.log(`${(conta + '.').green} ${(`Nombre: `).gray}${nom}  |  ${(`Completado: `).gray}${compl}`);
     });
     
   }
@@ -52,9 +53,10 @@ class ComPenTareas {
     let conta = 0;
     this.llistatArr.forEach( tasca =>{
       if (tasca.completado==true){
-        const { nom } = tasca;
+        const { nom, completado } = tasca;
+        const compl = completado === true ? 'SI' : 'NO';
         conta += 1;
-        console.log(`${(conta + '.').green} ${nom}`);
+        console.log(`${(conta + '.').green} ${(`Nombre: `).gray}${nom}  |  ${(`Completado: `).gray}${compl}`);
       }
     });
     if (conta==0){console.log('No hay ninguna tarea completada');}
@@ -65,31 +67,15 @@ class ComPenTareas {
     let conta = 0;
     this.llistatArr.forEach( tasca =>{
       if (tasca.completado==false){
-        const { nom } = tasca;
+        const { nom, completado } = tasca;
+        const compl = completado === true ? 'SI' : 'NO';
         conta += 1;
-        console.log(`${(conta + '.').green} ${nom}`);
+        console.log(`${(conta + '.').green} ${(`Nombre: `).gray}${nom}  |  ${(`Completado: `).gray}${compl}`);
       }
     });
     if (conta==0){console.log('Todas las tareas estan completadas');}
   }
 
- /*  llistarAlumnesHores(){
-    console.log();
-    let conta = 0;
-
-    this.llistatArr.forEach ( alumne =>{
-      const {nom, horesFetes } = alumne;
-      /* const hores = horesFetes > 0 ? `${horesFetes}`.green:`${horesFetes}`.red 
-      conta += 1;
-      console.log(`${(conta + '.').green} ${'Nom:'.yellow} ${(nom + "").cyan} ${"::".green} ${'Hores:'.yellow} ${(horesFetes+"").cyan}`);
-    }); 
- 
-  } */
-  /* async introNumHores ( id, hores ) {
-    const alumne = this._llista[id];
-    alumne.horesFetes = hores;
-    return alumne.nom;
-  } */
   async completarTarea(id,comp) {
     const tarea3  = this._llista[id];
     tarea3.completado = comp;
