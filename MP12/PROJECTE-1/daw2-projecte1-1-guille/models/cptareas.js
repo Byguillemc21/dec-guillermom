@@ -78,8 +78,16 @@ class ComPenTareas {
 
   async completarTarea(id,comp) {
     const tarea3  = this._llista[id];
-    tarea3.completado = comp;
-    return tarea3.nom;
+    const nombre = tarea3.nom;
+    const compl = tarea3.completado;
+    if (compl === true){ 
+      console.log('Esta tarea ya esta completada, selecciones una tarea que no la este');
+      return;
+    }else{
+      tarea3.completado = comp;
+      console.log(`La tarea '${nombre}' a sido completada `);
+      return;
+    }
     
   }
   async eliminarTarea(id) {
