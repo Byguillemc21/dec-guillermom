@@ -23,7 +23,7 @@ const main = async () => {
         const nom = await nuevoNombre("A nombre de quien es la reserva: ")
         const fila = await nuevaFila("Indique la fila para la reserva: ");
         const butaca = await nuevaButaca("Indique la butaca: ");
-        reservas.crearReserva(fila, butaca);
+        reservas.crearReserva(nom, fila, butaca);
       
         break;
 

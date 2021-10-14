@@ -40,11 +40,11 @@ class Cineres {
   mostrarSala(sala){
     console.log(); //Soc un salt de linia
     /* console.log('              _'.cyan); */
-    console.log('|=============================|'.blue);
-    console.log('|=========-SALA CINE-=========|'.cyan);
-    console.log('|=============================|___'.blue);
-    console.log('|        '.cyan,'||||||||||'.italic.red,'         __  |'.cyan);
-    console.log('|                            |  | |'.cyan); //Soc una salt de linia
+    console.log('| |=============================|'.blue);
+    console.log('| |=========-SALA CINE-=========|'.cyan);
+    console.log('| |=============================|___'.blue);
+    console.log(`|____     `.cyan,' ||||||||||'.italic.red,'         __  |'.cyan);
+    console.log('  |                            |  | |'.cyan); //Soc una salt de linia
       //  for (let fila = 0; fila < sala.length; fila++) {
       //    let columnas = sala[fila].join('|'.blue);
          
@@ -52,7 +52,7 @@ class Cineres {
          
       //  } 
     for (let a = 0; a < sala.length; a++) {
-      process.stdout.write(`|  `.cyan);
+      process.stdout.write(`  |  `.cyan);
       for (let b = 0; b <=7; b++) {
         let columnas = sala[a][b];
         process.stdout.write(`|`.blue+`${columnas}`.green+`|`.blue);
@@ -64,8 +64,8 @@ class Cineres {
     /* const arrr = arr.join(' ')+'.'; */
    
 
-    console.log('|                            |'.cyan); //Soc un salt de linia
-    console.log('|============================|'.cyan);
+    console.log('  |                            |'.cyan); //Soc un salt de linia
+    console.log('  |============================|'.cyan);
     
   }
 
