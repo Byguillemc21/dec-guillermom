@@ -1,11 +1,12 @@
 const Reserva = require("./reserva");
 
+
 /**
  * _llista :
  *  { uuid-234235324-234234523: {id: uuid-234235324-234234523, nom: 'pepito', hores: 10 }}
  */
 
-class ComPenTareas {
+class Cineres {
   _llista = {
     abc: 123,
   };
@@ -30,21 +31,53 @@ class ComPenTareas {
     this._llista[reserva.id] = reserva;
   }
 
-  carregarTareasFromArray(tareas = []){
-    tareas.forEach( ( tarea ) => {
-      this._llista[tarea.id]= tarea;
+  carregarReservasFromArray(reservas = []){
+    reservas.forEach( ( reserva ) => {
+      this._llista[reserva.id]= reserva;
     });
   }
 
-  llistarTareas(){
-    console.log();//soc un salt de linea
-    let conta = 0;
-    this.llistatArr.forEach( tarea =>{
-      const { nom } = tarea;
-      conta += 1;
-      console.log(`${(conta + '.').green} ${nom}`);
-    });
+  mostrarSala(sala){
+    console.log(); //Soc un salt de linia
+    /* console.log('              _'.cyan); */
+    console.log('|============================|'.blue);
+    console.log('|=========-SALA CINE-========|'.cyan);
+    console.log('|============================|'.blue);
+    console.log('|         '.cyan,'|||||||||'.bgBlue,'        |'.cyan);
+    console.log('|                            |'.cyan); //Soc una salt de linia
+      //  for (let fila = 0; fila < sala.length; fila++) {
+      //    let columnas = sala[fila].join('|'.blue);
+         
+      //    console.log('|    '.cyan+`|`.blue+`${columnas}`+`|`.blue+`    |`.cyan); 
+         
+      //  } 
+    for (let a = 0; a < sala.length; a++) {
+      process.stdout.write(`|  `.cyan);
+      for (let b = 0; b <=7; b++) {
+        let columnas = sala[a][b];
+        process.stdout.write(`|`.blue+`${columnas}`.green+`|`.blue);
+        
+      }
+      process.stdout.write(`  |`.cyan);
+      console.log();
+    }
+    /* const arrr = arr.join(' ')+'.'; */
+   
+
+    console.log('|                            |'.cyan); //Soc un salt de linia
+    console.log('|============================|'.cyan);
+    
   }
+
+  // llistarTareas(){
+  //   console.log();//soc un salt de linea
+  //   let conta = 0;
+  //   this.llistatArr.forEach( tarea =>{
+  //     const { nom } = tarea;
+  //     conta += 1;
+  //     console.log(`${(conta + '.').green} ${nom}`);
+  //   });
+  // }
 
   tareasCom(){
     console.log();//soc un salt de linea
@@ -107,5 +140,5 @@ class ComPenTareas {
  
 }
 
-module.exports = ComPenTareas;
+module.exports = Cineres;
 

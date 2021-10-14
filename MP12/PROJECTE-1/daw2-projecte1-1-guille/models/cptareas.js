@@ -44,6 +44,7 @@ class ComPenTareas {
       conta += 1;
       console.log(`${(conta + '.').green} ${nom}`);
     });
+    
   }
 
   tareasCom(){

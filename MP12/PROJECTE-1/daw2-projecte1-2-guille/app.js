@@ -1,18 +1,18 @@
 require("colors");
 
-const { inquirerMenu, pausa, novaTarea, tareaSelect,tareaSelectCheck, confirmar,} = require("./helpers/inquirer");
+const { inquirerMenu, pausa, nuevaFila, nuevaButaca, tareaSelect,tareaSelectCheck, confirmar,} = require("./helpers/inquirer");
 const { guardarDB , readDB} = require("./helpers/guardarFitxer");
 
-const ComPenTareas = require("./models/cptareas");
+const Cineres = require("./models/cinereservas");
 
 const main = async () => {
   let opt = "";
-  const tareas = new ComPenTareas();
+  const reservas = new Cineres();
 
-  const tareasDB = readDB();
+  const reservasDB = readDB();
 
-  if(tareasDB){// si hi ha dades, carregales
-      tareas.carregarTareasFromArray(tareasDB);
+  if(reservasDB){// si hi ha dades, carregales
+      reservas.carregarReservasFromArray(reservasDB);
   }
 
   do {
@@ -20,13 +20,23 @@ const main = async () => {
 
     switch (opt) {
       case "1":
-        const nomTarea = await novaTarea("Nombre de la tarea: ");
-        tareas.crearTarea(nomTarea, false);
+        const fila = await nuevaFila("Indique la fila para la reserva: ");
+        const butaca = await nuevaButaca("Indique la butaca: ");
+        reservas.crearReserva(fila, butaca);
       
         break;
 
       case "2":
-        tareas.llistarTareas();
+        const sala = [['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U']
+                      ];
+        reservas.mostrarSala(sala);
         break;
 
       case "3":
@@ -91,7 +101,7 @@ const main = async () => {
         break;
     }
 
-    guardarDB(tareas.llistatArr);
+    guardarDB(reservas.llistatArr);
 
     await pausa();
   } while (opt !== "0");

@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const ComPenTareas = require("../models/cptareas");
+const ComPenTareas = require("../models/cinereservas");
 require("colors");
 
 const preguntes = [
@@ -55,7 +55,7 @@ const pausa = async () => {
   await inquirer.prompt(question);
 };
 
-const novaTarea = async (message) => {
+const nuevaFila = async (message) => {
   const question = [
     {
       type: "input",
@@ -63,7 +63,26 @@ const novaTarea = async (message) => {
       message,
       validate(value) {
         if (value.length === 0) {
-          return "Porfavor, introduzca una tarea";
+          return "Porfavor, introduzca una fila";
+        }
+        return true;
+      },
+    },
+  ];
+
+  const { nom } = await inquirer.prompt(question);
+  return nom;
+};
+
+const nuevaButaca = async (message) => {
+  const question = [
+    {
+      type: "input",
+      name: "nom",
+      message,
+      validate(value) {
+        if (value.length === 0) {
+          return "Porfavor, introduzca una butaca";
         }
         return true;
       },
@@ -171,7 +190,8 @@ const confirmar = async() => {
 module.exports = {
   inquirerMenu,
   pausa,
-  novaTarea,
+  nuevaFila,
+  nuevaButaca,
   tareaSelect,
   tareaSelectCheck,
   confirmar,
