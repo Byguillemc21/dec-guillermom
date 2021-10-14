@@ -46,12 +46,7 @@ class Cineres {
     console.log('| |=============================|___'.blue);
     console.log(`|___      `.cyan,' ||||||||||'.italic.red,'         __  |'.cyan);
     console.log('  |                            |  | |'.cyan); //Soc una salt de linia
-      //  for (let fila = 0; fila < sala.length; fila++) {
-      //    let columnas = sala[fila].join('|'.blue);
-         
-      //    console.log('|    '.cyan+`|`.blue+`${columnas}`+`|`.blue+`    |`.cyan); 
-         
-      //  } 
+    
     for (let a = 0; a < sala.length; a++) {
       process.stdout.write(`  |  `.cyan);
       for (let b = 0; b <=7; b++) {
@@ -62,23 +57,12 @@ class Cineres {
       process.stdout.write(`  |  | |`.cyan);
       console.log();
     }
-    /* const arrr = arr.join(' ')+'.'; */
    
 
     console.log('  |                            |'.cyan); //Soc un salt de linia
     console.log('  |============================|'.cyan);
     
   }
-
-  // llistarTareas(){
-  //   console.log();//soc un salt de linea
-  //   let conta = 0;
-  //   this.llistatArr.forEach( tarea =>{
-  //     const { nom } = tarea;
-  //     conta += 1;
-  //     console.log(`${(conta + '.').green} ${nom}`);
-  //   });
-  // }
 
   tareasCom(){
     console.log();//soc un salt de linea
@@ -105,24 +89,6 @@ class Cineres {
     });
     if (conta==0){console.log('Todas las tareas estan completadas');}
   }
-
- /*  llistarAlumnesHores(){
-    console.log();
-    let conta = 0;
-
-    this.llistatArr.forEach ( alumne =>{
-      const {nom, horesFetes } = alumne;
-      /* const hores = horesFetes > 0 ? `${horesFetes}`.green:`${horesFetes}`.red 
-      conta += 1;
-      console.log(`${(conta + '.').green} ${'Nom:'.yellow} ${(nom + "").cyan} ${"::".green} ${'Hores:'.yellow} ${(horesFetes+"").cyan}`);
-    }); 
- 
-  } */
-  /* async introNumHores ( id, hores ) {
-    const alumne = this._llista[id];
-    alumne.horesFetes = hores;
-    return alumne.nom;
-  } */
   
   async eliminarReserva(id) {
     const elreserva = this._llista[id];
