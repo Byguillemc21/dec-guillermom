@@ -1,6 +1,6 @@
 require("colors");
 
-const { inquirerMenu, pausa, nuevoNombre, nuevaFila, nuevaButaca, tareaSelect,tareaSelectCheck, confirmar,} = require("./helpers/inquirer");
+const { inquirerMenu, pausa, nuevoNombre, nuevaFila, nuevaButaca, reservaSelect, confirmar,} = require("./helpers/inquirer");
 const { guardarDB , readDB} = require("./helpers/guardarFitxer");
 
 const Cineres = require("./models/cinereservas");
@@ -52,7 +52,18 @@ const main = async () => {
           const nomAlumne = await alumnes.introNumHores( id1, hores);
           console.log(`Alumne : ${nomAlumne} ${'::'.yellow} ${hores} hores guardades!`);
         } */
-        tareas.tareasNocom();
+        const idre = await reservaSelect(reservas.llistatArr);
+        if ( idre !== '0') {
+    
+          const ok = await confirmar();
+            if (ok) {
+              const reservaEliminat = await reservas.eliminarReserva(idre);
+              console.log(`La reserva a nombre de '${reservaEliminat}' a sido eliminada`);
+            }
+            else {
+              console.log(`La reserva no a sido eliminada`);
+            }
+        };
         break;
 
       case "5":
@@ -83,20 +94,6 @@ const main = async () => {
               console.log(`L'alumne no s'ha eliminat`);
             }
         }; */
-        break;
-      case "6":
-        const idte = await tareaSelect(tareas.llistatArr);
-        if ( idte !== '0') {
-    
-          const ok = await confirmar();
-            if (ok) {
-              const tareaEliminat = await tareas.eliminarTarea(idte);
-              console.log(`La tarea '${tareaEliminat}' a sido eliminada`);
-            }
-            else {
-              console.log(`La tarea no a sido eliminada`);
-            }
-        };
         break;
       default:
         break;

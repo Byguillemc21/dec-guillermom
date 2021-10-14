@@ -122,16 +122,11 @@ class Cineres {
     alumne.horesFetes = hores;
     return alumne.nom;
   } */
-  async completarTarea(id,comp) {
-    const tarea3  = this._llista[id];
-    tarea3.completado = comp;
-    return tarea3.nom;
-    
-  }
-  async eliminarTarea(id) {
-    const tarea2 = this._llista[id];
+  
+  async eliminarReserva(id) {
+    const elreserva = this._llista[id];
     delete this._llista[id];
-    return tarea2.nom;
+    return elreserva.nom;
   }
 
   

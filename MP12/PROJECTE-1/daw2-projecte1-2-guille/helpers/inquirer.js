@@ -111,38 +111,13 @@ const nuevaButaca = async (message) => {
   return nom;
 };
 
-const tareaSelectCheck = async( tareas = [] ) => {
-  const choices = tareas.map( (tarea, i) => {
+
+const reservaSelect = async( reservas = [] ) => {
+  const choices = reservas.map( (reserva, i) => {
     const idx =`${ i +1}.`.green;
     return {
-      value: tarea.id,
-      name: `${idx} ${tarea.nom}`
-    };
-  });
-  choices.unshift({
-    value: '0',
-    name: '0. '.green + 'Cancel·lar'
-  });
-  const pregunta= [
-    {
-      type: 'checkbox',
-      name: 'id',
-      message:'Selecciona tarea',
-      choices,
-
-    },
-  ];
-
-  const {id} = await inquirer.prompt(pregunta);
-  return id;
-};
-
-const tareaSelect = async( tareas = [] ) => {
-  const choices = tareas.map( (tarea, i) => {
-    const idx =`${ i +1}.`.green;
-    return {
-      value: tarea.id,
-      name: `${idx} ${tarea.nom}`
+      value: reserva.id,
+      name: `${idx} ${reserva.nom}`
     };
   });
   choices.unshift({
@@ -153,7 +128,7 @@ const tareaSelect = async( tareas = [] ) => {
     {
       type: 'list',
       name: 'id',
-      message:'Selecciona tarea',
+      message:'Selecciona reserva',
       choices,
 
     },
@@ -211,7 +186,6 @@ module.exports = {
   nuevoNombre,
   nuevaFila,
   nuevaButaca,
-  tareaSelect,
-  tareaSelectCheck,
+  reservaSelect,
   confirmar,
 };
