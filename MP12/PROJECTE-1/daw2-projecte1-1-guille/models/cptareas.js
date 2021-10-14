@@ -81,11 +81,11 @@ class ComPenTareas {
     const nombre = tarea3.nom;
     const compl = tarea3.completado;
     if (compl === true){ 
-      console.log(`La tarea '${(''+nombre).cyan}' ya estaba completada, selecciones una tarea que no la este`);
+      console.log(`La tarea '${(''+nombre).blue}' ya estaba completada, selecciones una tarea que no la este`);
       return;
     }else{
       tarea3.completado = comp;
-      console.log(`La tarea '${(''+nombre).cyan}' a sido completada `);
+      console.log(`La tarea '${(''+nombre).blue}' a sido completada `);
       return;
     }
     

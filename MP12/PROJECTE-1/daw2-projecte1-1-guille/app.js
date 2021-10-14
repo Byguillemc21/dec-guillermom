@@ -60,7 +60,7 @@ const main = async () => {
           const ok = await confirmar();
             if (ok) {
               const tareaEliminat = await tareas.eliminarTarea(idte);
-              console.log(`La tarea '${tareaEliminat}' a sido eliminada`);
+              console.log(`La tarea '${(''+tareaEliminat).blue}' a sido eliminada`);
             }
             else {
               console.log(`La tarea no a sido eliminada`);
