@@ -51,30 +51,12 @@ const main = async () => {
           const ok = await confirmar();
             if (ok) {
               const reservaEliminat = await reservas.eliminarReserva(idre);
-              console.log(`La reserva a nombre de '${reservaEliminat}' a sido eliminada`);
+              console.log(`La reserva a nombre de '${(''+reservaEliminat).blue}' a sido eliminada`);
             }
             else {
               console.log(`La reserva no a sido eliminada`);
             }
         };
-        break;
-
-      case "5":
-        const idtc = await tareaSelectCheck(tareas.llistatArr);
-        if ( idtc !== '0') {
-            idtc.forEach(i => {
-              if (i !== '0'){ 
-                  const idtc2 = i;
-                  const completado = true;
-                  /* console.log(`Id tarea -> ${idtc2}`); */ 
-                    tareas.completarTarea(idtc2,completado);
-                    console.log(`La/s tasca/s a sido completada `);   
-              }
-              else {
-                 console.log('Seleccione alguna tarea');
-              }
-            });
-        }; 
         break;
       default:
         break;
