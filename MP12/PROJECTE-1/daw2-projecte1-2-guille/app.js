@@ -23,6 +23,15 @@ const main = async () => {
         const nom = await nuevoNombre("A nombre de quien es la reserva: ")
         const fila = await nuevaFila("Indique la fila para la reserva: ");
         const butaca = await nuevaButaca("Indique la butaca: ");
+        const sala2 = [['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U'],
+                      ['U','U','U','U','U','U','U','U']
+                      ];
         //console.log(`${fila}`,`${butaca}`);
         if (fila == false || butaca == false){
          console.log(`\n============================`.cyan);
@@ -31,9 +40,7 @@ const main = async () => {
         }
         else {
           reservas.crearReserva(nom, fila, butaca);
-          console.log(`\n=====================`.cyan);
-          console.log(`${(`RESERVA COMPLETADA`).green}`);
-          console.log(`=====================\n`.cyan);
+          reservas.mostrarSala2(sala2);
         }  
       
         break;
