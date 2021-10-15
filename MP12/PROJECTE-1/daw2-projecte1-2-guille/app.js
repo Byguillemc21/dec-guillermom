@@ -59,7 +59,7 @@ const main = async () => {
         break;
 
       case "3":
-        tareas.tareasCom();
+        reservas.mostrarRec();
         break;
 
       case "4":

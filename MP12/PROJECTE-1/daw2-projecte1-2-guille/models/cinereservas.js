@@ -48,27 +48,6 @@ class Cineres {
     }
   }
 
-  // crearReserva(nom = "", fila = "", columna = "") {
-    
-  //   const reservaa = new Reserva(nom, fila, columna);
-  //   this.llistatArr.forEach( reserva => {
-  //     const { fila, columna } = reserva;
-  //     if (fila == reservaa.fila && columna == reservaa.columna){
-  //       console.log(`\n=====================`.cyan);
-  //       console.log(`! ${(`RESERVA OCUPADA`).RED}`);
-  //       console.log(`=====================\n`.cyan);
-  //     }
-  //     else {
-  //       this._llista[reservaa.id] = reservaa;
-  //       console.log(`\n=====================`.cyan);
-  //       console.log(`${(`RESERVA COMPLETADA`).green}`);
-  //       console.log(`=====================\n`.cyan);
-  //     }
-  //   })
-      
-
-  // }
-
   carregarReservasFromArray(reservas = []){
     reservas.forEach( ( reserva ) => {
       this._llista[reserva.id]= reserva;
@@ -168,33 +147,16 @@ class Cineres {
     console.log('  |============================|'.cyan);
 
   }
-
-  tareasCom(){
-    console.log();//soc un salt de linea
-    let conta = 0;
-    this.llistatArr.forEach( tasca =>{
-      if (tasca.completado==true){
-        const { nom } = tasca;
-        conta += 1;
-        console.log(`${(conta + '.').green} ${nom}`);
-      }
-    });
-    if (conta==0){console.log('No hay ninguna tarea completada');}
-  } 
-
-  tareasNocom(){
-    console.log();//soc un salt de linea
-    let conta = 0;
-    this.llistatArr.forEach( tasca =>{
-      if (tasca.completado==false){
-        const { nom } = tasca;
-        conta += 1;
-        console.log(`${(conta + '.').green} ${nom}`);
-      }
-    });
-    if (conta==0){console.log('Todas las tareas estan completadas');}
-  }
   
+  mostrarRec(){
+    const recaudacion = this.llistatArr.length*10.50;
+    console.log(` _________________________________________________________`.green);
+    console.log(`|                                                         |`.green);
+    console.log(`|  La recaudacion total a sido de unos `.green+`${recaudacion}€`.white+` (${this.llistatArr.length} * 10.5 €) |`.green);
+    console.log(`|_________________________________________________________|`.green);
+  }
+
+
   async eliminarReserva(id) {
     const elreserva = this._llista[id];
     delete this._llista[id];
