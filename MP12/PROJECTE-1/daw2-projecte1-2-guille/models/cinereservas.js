@@ -28,12 +28,24 @@ class Cineres {
 
   crearReserva(nom = "", fila = "", columna = "") {
     
-    const reserva = new Reserva(nom, fila, columna);
-    this._llista[reserva.id] = reserva;
-    console.log(`\n=====================`.cyan);
-    console.log(`${(`RESERVA COMPLETADA`).green}`);
-    console.log(`=====================\n`.cyan);
-
+    const reservaa = new Reserva(nom, fila, columna);
+    let rep = false;
+    this.llistatArr.forEach ( res => {
+      const {fila,columna} = res;
+      if (reservaa.fila == fila && reservaa.columna == columna){
+        rep = true;
+        console.log(`\n=====================`.cyan);
+        console.log(`! ${(`RESERVA OCUPADA`).red}`);
+        console.log(`=====================\n`.cyan);
+      }
+      return;
+    })
+    if (rep == false){
+      this._llista[reservaa.id] = reservaa;
+      console.log(`\n=====================`.cyan);
+      console.log(`${(`RESERVA COMPLETADA`).green}`);
+      console.log(`=====================\n`.cyan);
+    }
   }
 
   // crearReserva(nom = "", fila = "", columna = "") {
