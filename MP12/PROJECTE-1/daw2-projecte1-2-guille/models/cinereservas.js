@@ -63,19 +63,24 @@ class Cineres {
       process.stdout.write(`  |  `.cyan);
       for (let b = 0; b <=7; b++) {
         let columnas = sala[a][b];
-
+        let ocupado = false;
         this.llistatArr.forEach( reserva =>{
-      
+          
           const { fila, columna } = reserva;
           
           //console.log(`${fila} ${columna}`);
 
           if (a == fila-1 && b == columna-1){
-            process.stdout.write(`|`.blue+`${columnas}`.red+`|`.blue);
+            ocupado = true;
+            if(ocupado == true){
+              process.stdout.write(`|`.blue+`${columnas}`.red+`|`.blue);
+            }
           }
         
         }); 
-        process.stdout.write(`|`.blue+`${columnas}`.green+`|`.blue);
+        if (ocupado == false){
+          process.stdout.write(`|`.blue+`${columnas}`.green+`|`.blue);
+        }
       }
       process.stdout.write(`  |  | |`.cyan);
       console.log();
