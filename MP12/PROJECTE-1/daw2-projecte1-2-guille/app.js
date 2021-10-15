@@ -23,7 +23,18 @@ const main = async () => {
         const nom = await nuevoNombre("A nombre de quien es la reserva: ")
         const fila = await nuevaFila("Indique la fila para la reserva: ");
         const butaca = await nuevaButaca("Indique la butaca: ");
-        reservas.crearReserva(nom, fila, butaca);
+        //console.log(`${fila}`,`${butaca}`);
+        if (fila == false || butaca == false){
+         console.log(`\n============================`.cyan);
+         console.log(`! ${(`ESTA FILA O BUTACA NO EXISTE`).red}`);
+         console.log(`============================\n`.cyan);
+        }
+        else {
+          reservas.crearReserva(nom, fila, butaca);
+          console.log(`\n=====================`.cyan);
+          console.log(`${(`RESERVA COMPLETADA`).green}`);
+          console.log(`=====================\n`.cyan);
+        }  
       
         break;
 
@@ -51,7 +62,7 @@ const main = async () => {
           const ok = await confirmar();
             if (ok) {
               const reservaEliminat = await reservas.eliminarReserva(idre);
-              console.log(`La reserva a nombre de '${(''+reservaEliminat).blue}' a sido eliminada`);
+              console.log(`\nLa reserva a nombre de '${(''+reservaEliminat).blue}' a sido eliminada`);
             }
             else {
               console.log(`La reserva no a sido eliminada`);

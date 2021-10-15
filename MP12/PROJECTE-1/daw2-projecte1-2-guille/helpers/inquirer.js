@@ -89,7 +89,13 @@ const nuevaFila = async (message) => {
   ];
 
   const { nom } = await inquirer.prompt(question);
-  return nom;
+  if ( nom <= 8 ){
+    return nom;
+  }else {
+    console.log(`\n! ${(`Esta fila no existe`).red}\n`);
+    return false;
+  }
+  
 };
 
 const nuevaButaca = async (message) => {
@@ -108,7 +114,13 @@ const nuevaButaca = async (message) => {
   ];
 
   const { nom } = await inquirer.prompt(question);
-  return nom;
+  if ( nom <= 8 ) {
+    return nom;
+  }else {
+    console.log(`\n! ${(`Esta butaca no existe`).red}\n`);
+    return false;
+  }
+  
 };
 
 

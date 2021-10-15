@@ -27,8 +27,10 @@ class Cineres {
   }
 
   crearReserva(nom = "", fila = "", columna = "") {
+    
     const reserva = new Reserva(nom, fila, columna);
     this._llista[reserva.id] = reserva;
+    
   }
 
   carregarReservasFromArray(reservas = []){
@@ -40,7 +42,17 @@ class Cineres {
   mostrarSala(sala){
     console.log(); //Soc un salt de linia
     /* console.log('              _'.cyan); */
-   
+    let conta = 0;
+    console.log('   _____________________________');
+    console.log('  |                             |');
+    this.llistatArr.forEach( reserva =>{
+      
+        const { fila, columna } = reserva;
+        conta += 1;
+        console.log(`  |    ${(conta + '.').green} Fila: ${fila}  Butaca: ${columna}    |`);
+      
+    });
+    console.log();
     console.log('| |=============================|'.blue);
     console.log('| |=========-SALA CINE-=========|'.cyan);
     console.log('| |=============================|___'.blue);
@@ -61,7 +73,7 @@ class Cineres {
 
     console.log('  |                            |'.cyan); //Soc un salt de linia
     console.log('  |============================|'.cyan);
-    
+
   }
 
   tareasCom(){
