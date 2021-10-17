@@ -68,11 +68,11 @@ class Cineres {
       
     });
     console.log();
-    console.log('| |=============================|'.blue);
-    console.log('| |=========-SALA CINE-=========|'.cyan);
-    console.log('| |=============================|___'.blue);
-    console.log(`|___      `.cyan,' ||||||||||'.italic.red,'         __  |'.cyan);
-    console.log('  |                            |  | |'.cyan); //Soc una salt de linia
+    console.log('| |====================================|'.blue);
+    console.log('| |=============-SALA CINE-============|'.cyan);
+    console.log('| |====================================|____'.blue);
+    console.log(`|___          `.cyan,' ||||||||||'.italic.red,'             __  |'.cyan);
+    console.log('  |                                    |  | |'.cyan); //Soc una salt de linia
     
     for (let a = 0; a < sala.length; a++) {
       process.stdout.write(`  |  `.cyan);
@@ -102,18 +102,18 @@ class Cineres {
     }
    
 
-    console.log('  |                            |'.cyan); //Soc un salt de linia
-    console.log('  |============================|'.cyan);
+    console.log('  |                                    |'.cyan); //Soc un salt de linia
+    console.log('  |====================================|'.cyan);
 
   }
 
   mostrarSala2(sala){
     
-    console.log('| |=============================|'.blue);
-    console.log('| |=========-SALA CINE-=========|'.cyan);
-    console.log('| |=============================|___'.blue);
-    console.log(`|___      `.cyan,' ||||||||||'.italic.red,'         __  |'.cyan);
-    console.log('  |                            |  | |'.cyan); //Soc una salt de linia
+    console.log('| |====================================|'.blue);
+    console.log('| |=============-SALA CINE-============|'.cyan);
+    console.log('| |====================================|____'.blue);
+    console.log(`|___          `.cyan,' ||||||||||'.italic.red,'             __  |'.cyan);
+    console.log('  |                                    |  | |'.cyan); //Soc una salt de linia
     
     for (let a = 0; a < sala.length; a++) {
       process.stdout.write(`  |  `.cyan);
@@ -143,8 +143,8 @@ class Cineres {
     }
    
 
-    console.log('  |                            |'.cyan); //Soc un salt de linia
-    console.log('  |============================|'.cyan);
+    console.log('  |                                    |'.cyan); //Soc un salt de linia
+    console.log('  |====================================|'.cyan);
 
   }
   
