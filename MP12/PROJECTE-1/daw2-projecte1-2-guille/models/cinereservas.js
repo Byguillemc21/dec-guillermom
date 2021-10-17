@@ -151,9 +151,9 @@ class Cineres {
   mostrarRec(){
     const recaudacion = this.llistatArr.length*10;
     console.log(` ___________________________________________________________________`.green);
-    console.log(`|                                                                   |`.green);
-    console.log(`|  La recaudacion total a sido de unos `.green+`${recaudacion}€`.white+` (${this.llistatArr.length} * 10 €)             |`.green);
-    console.log(`|___________________________________________________________________|`.green);
+    console.log(`|                                                        |          |`.green);
+    console.log(`|  La recaudacion total a sido de unos `.green+`${recaudacion}€`.white+` (${this.llistatArr.length} * 10 €)  | CINE MAX |`.green);
+    console.log(`|________________________________________________________|__________|`.green);
   }
 
 
