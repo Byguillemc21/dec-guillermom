@@ -149,10 +149,10 @@ class Cineres {
   }
   
   mostrarRec(){
-    const recaudacion = this.llistatArr.length*10.50;
+    const recaudacion = this.llistatArr.length*10;
     console.log(` ___________________________________________________________________`.green);
     console.log(`|                                                                   |`.green);
-    console.log(`|  La recaudacion total a sido de unos `.green+`${recaudacion}€`.white+` (${this.llistatArr.length} * 10.5 €)         |`.green);
+    console.log(`|  La recaudacion total a sido de unos `.green+`${recaudacion}€`.white+` (${this.llistatArr.length} * 10 €)             |`.green);
     console.log(`|___________________________________________________________________|`.green);
   }
 
