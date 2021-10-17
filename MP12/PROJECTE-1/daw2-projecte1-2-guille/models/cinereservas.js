@@ -58,7 +58,7 @@ class Cineres {
     console.log(); //Soc un salt de linia
     /* console.log('              _'.cyan); */
     let conta = 0;
-    console.log(`   ${(`_____________________________`).bgBlue.blue}`);
+    console.log(`  ${(`_______________________________`).bgBlue.blue}`);
     console.log(`  ${(`|`).bgBlue.blue}                             ${(`|`).bgBlue.blue}`);
     this.llistatArr.forEach( reserva =>{
       
