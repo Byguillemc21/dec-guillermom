@@ -20,9 +20,9 @@ const main = async () => {
 
     switch (opt) {
       case "1":
-        const nom = await nuevoNombre("A nombre de quien es la reserva: ")
-        const fila = await nuevaFila("Indique la fila para la reserva: ");
-        const butaca = await nuevaButaca("Indique la butaca: ");
+        const nom = await nuevoNombre("A nombre de quien es la reserva! : ")
+        const fila = await nuevaFila("Indique la fila para la reserva! : ");
+        const butaca = await nuevaButaca("Indique la butaca! : ");
         const sala2 = [['︼','︼','︼','︼','︼','︼','︼','︼'],
                        ['︼','︼','︼','︼','︼','︼','︼','︼'],
                        ['︼','︼','︼','︼','︼','︼','︼','︼'],
