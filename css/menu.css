@@ -1,50 +1,9 @@
-html,body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+body,html {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 a {
-text-decoration: none;
-}
-
-h2 {
-    margin: 0;
-}
-
-h3 {
-    margin: 0;
+    font-size: 1.1rem;
 }
 
 
-.container {
-    margin: 0;
-    width: 500px;
-    height: 300px;
-    margin: auto;
-    text-align: center;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    margin-top: 10%;
-    /* display: list-item; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
-.lista {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-ul {
-    padding: 0;
-}
-
-li {
-    margin: 10px;
-}
